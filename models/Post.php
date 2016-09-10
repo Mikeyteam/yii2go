@@ -8,7 +8,7 @@ use Yii;
  * This is the model class for table "post".
  *
  * @property integer $id
- * @property string $author_id
+ * @property integer $author_id
  * @property string $text
  * @property string $date
  */
@@ -29,7 +29,7 @@ class Post extends \yii\db\ActiveRecord
      */
     public function getUser () {
 
-        return $this->hasOne(User::className(),['id' => 'user_id']);
+        return $this->hasOne(User::className(),['id' => 'author_id']);
     }
 
     /**

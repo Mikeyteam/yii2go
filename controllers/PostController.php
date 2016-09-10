@@ -65,7 +65,7 @@ class PostController extends Controller
     {
 
         $model = new post();
-
+        $model->author_id = Yii::$app->user->id;
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
@@ -84,7 +84,6 @@ class PostController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {

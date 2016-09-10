@@ -4,19 +4,21 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\post */
+/* @var $model app\models\user */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="post-form">
+<div class="user-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?//= $form->field($model, 'author_id')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'name')->textInput(['maxlength' => true], ['autofocus' => true]) ?>
 
-    <?= $form->field($model, 'text')->textarea(['rows' => 6]) ?>
+    <?= $form->field($model, 'last_name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'date')->textInput() ?>
+    <?= $form->field($model, 'login')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

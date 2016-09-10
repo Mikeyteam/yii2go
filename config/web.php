@@ -58,6 +58,7 @@ $config = [
             'rules' => [
 
                 'post' => 'post/index',
+                'users' => 'user/users',
                 [
                     'class' => 'yii\web\UrlRule',
                     'pattern' => '',
@@ -72,14 +73,14 @@ $config = [
                     'class' => 'yii\web\urlRule',
                     'pattern' => 'post/<action:update|delete>/<id:\d>',
                     'route' => 'post/<action>',
-                    'suffix' => '.html',
+                    //'suffix' => '.html',
 
                 ],
                 [
                     'class' => 'yii\web\urlRule',
                     'pattern' => 'post/<id:\d>',
                     'route' => 'post/view',
-                    'suffix' => '.html',
+                    //'suffix' => '.html',
 
                 ],
 
