@@ -15,14 +15,14 @@ $this->title = Yii::$app->name;
         <div class="row">
             <?foreach ($posts as $post) { ?>
                 <div class="col-lg-4">
-                    <h2><?= $post->author_id ? $post->author_id : 'Нет автора' ;?></h2>
+                    <h2><?= $post->date; ?></h2>
                     <p><?= $post->text;?></p>
+                    <p><?= $post->name ? 'Автор:'.$post->name : 'Нет автора' ;?></p>
                     <p><a class="btn btn-default" href="post/<?=$post->id ?>">Посмотреть</a></p>
                 </div>
             <?}?>
 
 
         </div>
-
     </div>
 </div>

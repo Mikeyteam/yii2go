@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\Post;
+use app\models\User;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -69,7 +70,14 @@ class SiteController extends Controller
     public function actionIndex()
     {
 
-        $posts = Post::find()->all();
+        $posts = Post::find()
+            ->select(['user.*','post.*'])
+            ->leftJoin('user', '`post`.`author_id` = `user`.`id`')
+            ->all();
+        //  echo $post->name; //вощможно из-за ExtraPropsBehaviour extends Behavior // Позволяет модели иметь совершенно произвольные свойства
+        /*  foreach ($post as $item) {
+          echo $item->user->name; //таким запросом мы говорим загрузить дополнительно связь
+          }*/
         return $this->render('index', ['posts' => $posts]);
 
     }

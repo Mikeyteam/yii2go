@@ -1,7 +1,7 @@
 <?php
-
 namespace app\models;
 
+use app\custom\behaviors\ExtraPropsBehaviour;
 use Yii;
 
 /**
@@ -22,6 +22,14 @@ class Post extends \yii\db\ActiveRecord
     public static function tableName()
     {
         return '{{%post}}';
+    }
+
+    /** @inheritdoc */
+    public function behaviors()
+    {
+        return [
+            ExtraPropsBehaviour::className()
+        ];
     }
 
     /**
