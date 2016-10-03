@@ -59,6 +59,7 @@ $config = [
 
                 'post' => 'post/index',
                 'users' => 'user/users',
+                'ajax' => 'ajax/index',
                 [
                     'class' => 'yii\web\UrlRule',
                     'pattern' => '',

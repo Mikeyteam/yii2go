@@ -8,6 +8,7 @@ $this->title = Yii::$app->name;
 <div class="jumbotron">
         <h1>Congratulations!</h1>
         <p class="lead">Жалий бложик</p>
+    <?= date('d-m-Y H:i');?>
     </div>
 
     <div class="body-content">
@@ -21,7 +22,6 @@ $this->title = Yii::$app->name;
                     <p><a class="btn btn-default" href="post/<?=$post->id ?>">Посмотреть</a></p>
                 </div>
             <?}?>
-
 
         </div>
     </div>

@@ -24,7 +24,7 @@ class Post extends \yii\db\ActiveRecord
         return '{{%post}}';
     }
 
-    /** @inheritdoc */
+    /** @inheritdoc */ //Прикрутили поведение чтобы модель могла иметь любые свойства
     public function behaviors()
     {
         return [

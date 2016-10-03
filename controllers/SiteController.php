@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\Post;
+use app\models\Articles;
 use app\models\User;
 use Yii;
 use yii\filters\AccessControl;
@@ -78,6 +79,38 @@ class SiteController extends Controller
         /*  foreach ($post as $item) {
           echo $item->user->name; //таким запросом мы говорим загрузить дополнительно связь
           }*/
+   /*     $ch = curl_init('http://yii2go.ru/');
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER,true);
+        curl_setopt($ch, CURLOPT_HEADER, true);
+        curl_setopt($ch, CURLOPT_COOKIE, 'curl_normal_cookie=1 ; curl_session_cookie=1');
+        $html = curl_exec($ch);
+        curl_close($ch);
+        echo $html;*/
+
+        //Открыли поток с файлом
+/*        $fileStream = fopen(__DIR__.'/csb.txt', 'r'); //feof - определяет дошел ли указатель до конца файла
+        $users = [];
+        while(!feof($fileStream)){
+            $userLine = fgets($fileStream); //fgets - берет одну строку
+            $user = [];
+            $user['first_name'] = $userLine[0];
+            $user['last_name'] = $userLine[1];
+            $user['second_name'] = $userLine[2];
+            $user['birth_name'] = $userLine[3];
+            $users[] = $user;
+        }
+
+        foreach($users as $user) {
+            echo $user['first_name'].' '.$user['last_name'].' '.$user['second_name'].' '. $user['birth_name'].'<br>';
+        }
+        fclose($fileStream);//Закрыли поток*/
+
+        $news = Articles::find(4)->one();
+        $news->name = 'Первая статья';
+        $news->text  = "Первая тестовая статья";
+        $news->save(false);
+
+
         return $this->render('index', ['posts' => $posts]);
 
     }

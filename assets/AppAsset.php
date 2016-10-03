@@ -22,6 +22,7 @@ class AppAsset extends AssetBundle
         'css/site.css',
     ];
     public $js = [
+        'js/my.js',
     ];
     public $depends = [
         'yii\web\YiiAsset', //подключает javascript модуль и библиотеку Jquery
